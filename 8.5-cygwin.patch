@@ -1,0 +1,92 @@
+--- origsrc/tcl8.5.6/generic/tclLoad.c	2008-11-13 18:22:39.000000000 -0600
++++ src/tcl8.5.6/generic/tclLoad.c	2009-02-26 11:24:06.430663600 -0600
+@@ -310,6 +310,12 @@ Tcl_LoadObjCmd(
+ 			&& (pkgGuess[2] == 'b')) {
+ 		    pkgGuess += 3;
+ 		}
++#ifdef __CYGWIN__
++		if ((pkgGuess[0] == 'c') && (pkgGuess[1] == 'y')
++			&& (pkgGuess[2] == 'g')) {
++		    pkgGuess += 3;
++		}
++#endif
+ 		for (p = pkgGuess; *p != 0; p += offset) {
+ 		    offset = Tcl_UtfToUniChar(p, &ch);
+ 		    if ((ch > 0x100)
+--- origsrc/tcl8.5.6/unix/configure.in	2008-12-22 08:16:08.000000000 -0600
++++ src/tcl8.5.6/unix/configure.in	2009-02-26 11:43:34.998995800 -0600
+@@ -787,8 +787,8 @@ else
+         eval "TCL_EXP_FILE=libtcl${TCL_EXPORT_FILE_SUFFIX}"
+     
+         if test "$GCC" = "yes" ; then
+-            TCL_BUILD_LIB_SPEC="-Wl,-bI:`pwd | sed -e 's/ /\\\\ /g'`/${TCL_BUILD_EXP_FILE} -L`pwd | sed -e 's/ /\\\\ /g'`"
+-            TCL_LIB_SPEC="-Wl,-bI:${libdir}/${TCL_EXP_FILE} -L${libdir}"
++            TCL_BUILD_LIB_SPEC="-Wl,`pwd | sed -e 's/ /\\\\ /g'`/${TCL_BUILD_EXP_FILE} -L`pwd | sed -e 's/ /\\\\ /g'`"
++            TCL_LIB_SPEC="${libdir}/${TCL_EXP_FILE} -L${libdir}"
+         else
+             TCL_BUILD_LIB_SPEC="-bI:`pwd | sed -e 's/ /\\\\ /g'`/${TCL_BUILD_EXP_FILE}"
+             TCL_LIB_SPEC="-bI:${libdir}/${TCL_EXP_FILE}"
+--- origsrc/tcl8.5.6/unix/installManPage	2008-12-22 08:16:08.000000000 -0600
++++ src/tcl8.5.6/unix/installManPage	2009-02-26 11:32:02.697055600 -0600
+@@ -3,7 +3,7 @@
+ ZIP=:
+ while true; do
+     case $1 in
+-        -s | --symlinks  )      S="-s ";;
++        -s | --symlinks  )      SYM="-s ";;
+         -z | --compress  )    ZIP=$2;  shift ;;
+ 	-e | --extension )      Z=$2;  shift ;;
+ 	-s | --suffix    ) SUFFIX=$2;  shift ;;
+@@ -18,7 +18,7 @@ fi
+ 
+ MANPAGE=$1
+ DIR=$2
+-test -z "$S" && S="$DIR/"
++test -z "$SYM" && SYM="$DIR/"
+ 
+ # A sed script to parse the alternative names out of a man page.
+ #
+@@ -58,10 +58,10 @@ for f in $NAMES; do
+ 	rm -f $DIR/$FIRST $DIR/$FIRST.*
+ 	sed -e "/man\.macros/r $SRCDIR/man.macros" -e "/man\.macros/d" \
+ 	    $MANPAGE > $DIR/$FIRST
+-	chmod 444 $DIR/$FIRST
++	chmod 644 $DIR/$FIRST
+ 	$ZIP $DIR/$FIRST
+     else
+ 	rm -f $DIR/$f $DIR/$f.*
+-	ln $S$FIRST$Z $DIR/$f$Z
++	ln $SYM$FIRST$Z $DIR/$f$Z
+     fi
+ done
+--- origsrc/tcl8.5.6/unix/tcl.m4	2008-12-22 08:16:08.000000000 -0600
++++ src/tcl8.5.6/unix/tcl.m4	2009-02-26 11:38:29.141071600 -0600
+@@ -1276,6 +1276,20 @@ dnl AC_CHECK_TOOL(AR, ar)
+ 	    CC_SEARCH_FLAGS=""
+ 	    LD_SEARCH_FLAGS=""
+ 	    ;;
++	CYGWIN*)
++	    SHLIB_CFLAGS="-DPIC -DDLL_EXPORT"
++	    SHLIB_LD='${CC} -shared'
++	    SHLIB_LD_LIBS='${LIBS}'
++	    SHLIB_SUFFIX=".dll"
++	    DL_OBJS="tclLoadDl.o"
++	    DL_LIBS=""
++	    LDFLAGS="$LDFLAGS -Wl,--export-dynamic"
++	    CC_SEARCH_FLAGS=""
++	    LD_SEARCH_FLAGS=""
++	    TCL_SHLIB_LD_EXTRAS='-Wl,--out-implib,${TCL_BUILD_EXP_FILE}'
++	    TCL_NEEDS_EXP_FILE=1
++	    TCL_EXPORT_FILE_SUFFIX='${VERSION}\$\{DBGX\}.dll.a'
++	    ;;
+ 	dgux*)
+ 	    SHLIB_CFLAGS="-K PIC"
+ 	    SHLIB_LD='${CC} -G'
+@@ -2060,6 +2074,7 @@ dnl # preprocessing tests use only CPPFL
+ 	case $system in
+ 	    AIX-*) ;;
+ 	    BSD/OS*) ;;
++	    CYGWIN*) ;;
+ 	    IRIX*) ;;
+ 	    NetBSD-*|FreeBSD-*) ;;
+ 	    Darwin-*) ;;
