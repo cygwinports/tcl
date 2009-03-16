@@ -8,18 +8,18 @@ Tcl can also be used for a variety of web-related tasks and for creating
 powerful command languages for applications.
 
 Runtime requirements:
-  cygwin-1.5.25-15
-  alternatives
+  cygwin-1.7.0-43
+  libgcc1-4.3.2-2
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.61-1
-  automake1.4-1.4p6-4
-  binutils-20080523-2
-  cygport-0.4.0-1
-  gawk-3.1.6-1
-  gcc-core-3.4.4-3
-  make-3.81-1
+  autoconf2.5-2.63-10
+  automake1.4-1.4p6-10
+  binutils-20080624-2
+  cygport-0.9.5-1
+  gawk-3.1.6-2
+  gcc-core-4.3.2-2
+  make-3.81-2
   sed-4.1.5-2
 
 Canonical website:
@@ -31,161 +31,299 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack tcl-8.4.19-X-src.tar.bz2
+  unpack tcl-8.5.6-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./tcl-8.4.19-X.cygport all
+  cygport ./tcl-8.5.6-X.cygport all
 
 This will create:
-  /usr/src/tcl-8.4.19-X-src.tar.bz2
-  /usr/src/tcl-8.4.19-X.tar.bz2
+  /usr/src/tcl-8.5.6-X-src.tar.bz2
+  /usr/src/tcl-8.5.6-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary package:
 
-  /etc/postinstall/tcl.sh
-  /etc/preremove/tcl.sh
-  /usr/bin/cygtcl8.4.dll
-  /usr/bin/tclsh8.4.exe
-  /usr/include/tcl8.4/generic/regcustom.h
-  /usr/include/tcl8.4/generic/regerrs.h
-  /usr/include/tcl8.4/generic/regex.h
-  /usr/include/tcl8.4/generic/regguts.h
-  /usr/include/tcl8.4/generic/tclCompile.h
-  /usr/include/tcl8.4/generic/tclIO.h
-  /usr/include/tcl8.4/generic/tclInitScript.h
-  /usr/include/tcl8.4/generic/tclInt.h
-  /usr/include/tcl8.4/generic/tclIntDecls.h
-  /usr/include/tcl8.4/generic/tclIntPlatDecls.h
-  /usr/include/tcl8.4/generic/tclMath.h
-  /usr/include/tcl8.4/generic/tclPort.h
-  /usr/include/tcl8.4/generic/tclRegexp.h
-  /usr/include/tcl8.4/tcl.h
-  /usr/include/tcl8.4/tclDecls.h
-  /usr/include/tcl8.4/tclPlatDecls.h
-  /usr/include/tcl8.4/unix/tclUnixPort.h
-  /usr/include/tcl8.4/unix/tclUnixThrd.h
-  /usr/lib/libtcl8.4.a
-  /usr/lib/libtcl8.4.dll.a
-  /usr/lib/libtclstub8.4.a
-  /usr/lib/tcl8.4/auto.tcl
-  /usr/lib/tcl8.4/encoding/ascii.enc
-  /usr/lib/tcl8.4/encoding/big5.enc
-  /usr/lib/tcl8.4/encoding/cp1250.enc
-  /usr/lib/tcl8.4/encoding/cp1251.enc
-  /usr/lib/tcl8.4/encoding/cp1252.enc
-  /usr/lib/tcl8.4/encoding/cp1253.enc
-  /usr/lib/tcl8.4/encoding/cp1254.enc
-  /usr/lib/tcl8.4/encoding/cp1255.enc
-  /usr/lib/tcl8.4/encoding/cp1256.enc
-  /usr/lib/tcl8.4/encoding/cp1257.enc
-  /usr/lib/tcl8.4/encoding/cp1258.enc
-  /usr/lib/tcl8.4/encoding/cp437.enc
-  /usr/lib/tcl8.4/encoding/cp737.enc
-  /usr/lib/tcl8.4/encoding/cp775.enc
-  /usr/lib/tcl8.4/encoding/cp850.enc
-  /usr/lib/tcl8.4/encoding/cp852.enc
-  /usr/lib/tcl8.4/encoding/cp855.enc
-  /usr/lib/tcl8.4/encoding/cp857.enc
-  /usr/lib/tcl8.4/encoding/cp860.enc
-  /usr/lib/tcl8.4/encoding/cp861.enc
-  /usr/lib/tcl8.4/encoding/cp862.enc
-  /usr/lib/tcl8.4/encoding/cp863.enc
-  /usr/lib/tcl8.4/encoding/cp864.enc
-  /usr/lib/tcl8.4/encoding/cp865.enc
-  /usr/lib/tcl8.4/encoding/cp866.enc
-  /usr/lib/tcl8.4/encoding/cp869.enc
-  /usr/lib/tcl8.4/encoding/cp874.enc
-  /usr/lib/tcl8.4/encoding/cp932.enc
-  /usr/lib/tcl8.4/encoding/cp936.enc
-  /usr/lib/tcl8.4/encoding/cp949.enc
-  /usr/lib/tcl8.4/encoding/cp950.enc
-  /usr/lib/tcl8.4/encoding/dingbats.enc
-  /usr/lib/tcl8.4/encoding/ebcdic.enc
-  /usr/lib/tcl8.4/encoding/euc-cn.enc
-  /usr/lib/tcl8.4/encoding/euc-jp.enc
-  /usr/lib/tcl8.4/encoding/euc-kr.enc
-  /usr/lib/tcl8.4/encoding/gb12345.enc
-  /usr/lib/tcl8.4/encoding/gb1988.enc
-  /usr/lib/tcl8.4/encoding/gb2312-raw.enc
-  /usr/lib/tcl8.4/encoding/gb2312.enc
-  /usr/lib/tcl8.4/encoding/iso2022-jp.enc
-  /usr/lib/tcl8.4/encoding/iso2022-kr.enc
-  /usr/lib/tcl8.4/encoding/iso2022.enc
-  /usr/lib/tcl8.4/encoding/iso8859-1.enc
-  /usr/lib/tcl8.4/encoding/iso8859-10.enc
-  /usr/lib/tcl8.4/encoding/iso8859-13.enc
-  /usr/lib/tcl8.4/encoding/iso8859-14.enc
-  /usr/lib/tcl8.4/encoding/iso8859-15.enc
-  /usr/lib/tcl8.4/encoding/iso8859-16.enc
-  /usr/lib/tcl8.4/encoding/iso8859-2.enc
-  /usr/lib/tcl8.4/encoding/iso8859-3.enc
-  /usr/lib/tcl8.4/encoding/iso8859-4.enc
-  /usr/lib/tcl8.4/encoding/iso8859-5.enc
-  /usr/lib/tcl8.4/encoding/iso8859-6.enc
-  /usr/lib/tcl8.4/encoding/iso8859-7.enc
-  /usr/lib/tcl8.4/encoding/iso8859-8.enc
-  /usr/lib/tcl8.4/encoding/iso8859-9.enc
-  /usr/lib/tcl8.4/encoding/jis0201.enc
-  /usr/lib/tcl8.4/encoding/jis0208.enc
-  /usr/lib/tcl8.4/encoding/jis0212.enc
-  /usr/lib/tcl8.4/encoding/koi8-r.enc
-  /usr/lib/tcl8.4/encoding/koi8-u.enc
-  /usr/lib/tcl8.4/encoding/ksc5601.enc
-  /usr/lib/tcl8.4/encoding/macCentEuro.enc
-  /usr/lib/tcl8.4/encoding/macCroatian.enc
-  /usr/lib/tcl8.4/encoding/macCyrillic.enc
-  /usr/lib/tcl8.4/encoding/macDingbats.enc
-  /usr/lib/tcl8.4/encoding/macGreek.enc
-  /usr/lib/tcl8.4/encoding/macIceland.enc
-  /usr/lib/tcl8.4/encoding/macJapan.enc
-  /usr/lib/tcl8.4/encoding/macRoman.enc
-  /usr/lib/tcl8.4/encoding/macRomania.enc
-  /usr/lib/tcl8.4/encoding/macThai.enc
-  /usr/lib/tcl8.4/encoding/macTurkish.enc
-  /usr/lib/tcl8.4/encoding/macUkraine.enc
-  /usr/lib/tcl8.4/encoding/shiftjis.enc
-  /usr/lib/tcl8.4/encoding/symbol.enc
-  /usr/lib/tcl8.4/encoding/tis-620.enc
-  /usr/lib/tcl8.4/history.tcl
-  /usr/lib/tcl8.4/http1.0/http.tcl
-  /usr/lib/tcl8.4/http1.0/pkgIndex.tcl
-  /usr/lib/tcl8.4/http2.5/http.tcl
-  /usr/lib/tcl8.4/http2.5/pkgIndex.tcl
-  /usr/lib/tcl8.4/init.tcl
-  /usr/lib/tcl8.4/ldAix
-  /usr/lib/tcl8.4/ldAout.tcl
-  /usr/lib/tcl8.4/msgcat1.3/msgcat.tcl
-  /usr/lib/tcl8.4/msgcat1.3/pkgIndex.tcl
-  /usr/lib/tcl8.4/opt0.4/optparse.tcl
-  /usr/lib/tcl8.4/opt0.4/pkgIndex.tcl
-  /usr/lib/tcl8.4/package.tcl
-  /usr/lib/tcl8.4/parray.tcl
-  /usr/lib/tcl8.4/safe.tcl
-  /usr/lib/tcl8.4/tclAppInit.c
-  /usr/lib/tcl8.4/tclConfig.sh
-  /usr/lib/tcl8.4/tclIndex
-  /usr/lib/tcl8.4/tcltest2.2/pkgIndex.tcl
-  /usr/lib/tcl8.4/tcltest2.2/tcltest.tcl
-  /usr/lib/tcl8.4/word.tcl
-  /usr/share/doc/tcl-8.4.19/ChangeLog
-  /usr/share/doc/tcl-8.4.19/Changes
-  /usr/share/doc/tcl-8.4.19/README
+  /usr/bin/libtcl8.5.dll
+  /usr/bin/tclsh
+  /usr/bin/tclsh8.5.exe
+  /usr/include/tcl8.5/generic/regcustom.h
+  /usr/include/tcl8.5/generic/regerrs.h
+  /usr/include/tcl8.5/generic/regex.h
+  /usr/include/tcl8.5/generic/regguts.h
+  /usr/include/tcl8.5/generic/tcl.h
+  /usr/include/tcl8.5/generic/tclCompile.h
+  /usr/include/tcl8.5/generic/tclDecls.h
+  /usr/include/tcl8.5/generic/tclFileSystem.h
+  /usr/include/tcl8.5/generic/tclIO.h
+  /usr/include/tcl8.5/generic/tclInt.h
+  /usr/include/tcl8.5/generic/tclIntDecls.h
+  /usr/include/tcl8.5/generic/tclIntPlatDecls.h
+  /usr/include/tcl8.5/generic/tclPlatDecls.h
+  /usr/include/tcl8.5/generic/tclPort.h
+  /usr/include/tcl8.5/generic/tclRegexp.h
+  /usr/include/tcl8.5/generic/tclTomMath.h
+  /usr/include/tcl8.5/generic/tclTomMathDecls.h
+  /usr/include/tcl8.5/generic/tommath.h
+  /usr/include/tcl8.5/tcl.h
+  /usr/include/tcl8.5/tclDecls.h
+  /usr/include/tcl8.5/tclPlatDecls.h
+  /usr/include/tcl8.5/tclTomMath.h
+  /usr/include/tcl8.5/tclTomMathDecls.h
+  /usr/include/tcl8.5/unix/tclUnixPort.h
+  /usr/include/tcl8.5/unix/tclUnixThrd.h
+  /usr/lib/libtcl8.5.a
+  /usr/lib/libtcl8.5.dll.a
+  /usr/lib/libtclstub8.5.a
+  /usr/lib/tcl8.5/auto.tcl
+  /usr/lib/tcl8.5/clock.tcl
+  /usr/lib/tcl8.5/encoding/ascii.enc
+  /usr/lib/tcl8.5/encoding/big5.enc
+  /usr/lib/tcl8.5/encoding/cp1250.enc
+  /usr/lib/tcl8.5/encoding/cp1251.enc
+  /usr/lib/tcl8.5/encoding/cp1252.enc
+  /usr/lib/tcl8.5/encoding/cp1253.enc
+  /usr/lib/tcl8.5/encoding/cp1254.enc
+  /usr/lib/tcl8.5/encoding/cp1255.enc
+  /usr/lib/tcl8.5/encoding/cp1256.enc
+  /usr/lib/tcl8.5/encoding/cp1257.enc
+  /usr/lib/tcl8.5/encoding/cp1258.enc
+  /usr/lib/tcl8.5/encoding/cp437.enc
+  /usr/lib/tcl8.5/encoding/cp737.enc
+  /usr/lib/tcl8.5/encoding/cp775.enc
+  /usr/lib/tcl8.5/encoding/cp850.enc
+  /usr/lib/tcl8.5/encoding/cp852.enc
+  /usr/lib/tcl8.5/encoding/cp855.enc
+  /usr/lib/tcl8.5/encoding/cp857.enc
+  /usr/lib/tcl8.5/encoding/cp860.enc
+  /usr/lib/tcl8.5/encoding/cp861.enc
+  /usr/lib/tcl8.5/encoding/cp862.enc
+  /usr/lib/tcl8.5/encoding/cp863.enc
+  /usr/lib/tcl8.5/encoding/cp864.enc
+  /usr/lib/tcl8.5/encoding/cp865.enc
+  /usr/lib/tcl8.5/encoding/cp866.enc
+  /usr/lib/tcl8.5/encoding/cp869.enc
+  /usr/lib/tcl8.5/encoding/cp874.enc
+  /usr/lib/tcl8.5/encoding/cp932.enc
+  /usr/lib/tcl8.5/encoding/cp936.enc
+  /usr/lib/tcl8.5/encoding/cp949.enc
+  /usr/lib/tcl8.5/encoding/cp950.enc
+  /usr/lib/tcl8.5/encoding/dingbats.enc
+  /usr/lib/tcl8.5/encoding/ebcdic.enc
+  /usr/lib/tcl8.5/encoding/euc-cn.enc
+  /usr/lib/tcl8.5/encoding/euc-jp.enc
+  /usr/lib/tcl8.5/encoding/euc-kr.enc
+  /usr/lib/tcl8.5/encoding/gb12345.enc
+  /usr/lib/tcl8.5/encoding/gb1988.enc
+  /usr/lib/tcl8.5/encoding/gb2312-raw.enc
+  /usr/lib/tcl8.5/encoding/gb2312.enc
+  /usr/lib/tcl8.5/encoding/iso2022-jp.enc
+  /usr/lib/tcl8.5/encoding/iso2022-kr.enc
+  /usr/lib/tcl8.5/encoding/iso2022.enc
+  /usr/lib/tcl8.5/encoding/iso8859-1.enc
+  /usr/lib/tcl8.5/encoding/iso8859-10.enc
+  /usr/lib/tcl8.5/encoding/iso8859-13.enc
+  /usr/lib/tcl8.5/encoding/iso8859-14.enc
+  /usr/lib/tcl8.5/encoding/iso8859-15.enc
+  /usr/lib/tcl8.5/encoding/iso8859-16.enc
+  /usr/lib/tcl8.5/encoding/iso8859-2.enc
+  /usr/lib/tcl8.5/encoding/iso8859-3.enc
+  /usr/lib/tcl8.5/encoding/iso8859-4.enc
+  /usr/lib/tcl8.5/encoding/iso8859-5.enc
+  /usr/lib/tcl8.5/encoding/iso8859-6.enc
+  /usr/lib/tcl8.5/encoding/iso8859-7.enc
+  /usr/lib/tcl8.5/encoding/iso8859-8.enc
+  /usr/lib/tcl8.5/encoding/iso8859-9.enc
+  /usr/lib/tcl8.5/encoding/jis0201.enc
+  /usr/lib/tcl8.5/encoding/jis0208.enc
+  /usr/lib/tcl8.5/encoding/jis0212.enc
+  /usr/lib/tcl8.5/encoding/koi8-r.enc
+  /usr/lib/tcl8.5/encoding/koi8-u.enc
+  /usr/lib/tcl8.5/encoding/ksc5601.enc
+  /usr/lib/tcl8.5/encoding/macCentEuro.enc
+  /usr/lib/tcl8.5/encoding/macCroatian.enc
+  /usr/lib/tcl8.5/encoding/macCyrillic.enc
+  /usr/lib/tcl8.5/encoding/macDingbats.enc
+  /usr/lib/tcl8.5/encoding/macGreek.enc
+  /usr/lib/tcl8.5/encoding/macIceland.enc
+  /usr/lib/tcl8.5/encoding/macJapan.enc
+  /usr/lib/tcl8.5/encoding/macRoman.enc
+  /usr/lib/tcl8.5/encoding/macRomania.enc
+  /usr/lib/tcl8.5/encoding/macThai.enc
+  /usr/lib/tcl8.5/encoding/macTurkish.enc
+  /usr/lib/tcl8.5/encoding/macUkraine.enc
+  /usr/lib/tcl8.5/encoding/shiftjis.enc
+  /usr/lib/tcl8.5/encoding/symbol.enc
+  /usr/lib/tcl8.5/encoding/tis-620.enc
+  /usr/lib/tcl8.5/history.tcl
+  /usr/lib/tcl8.5/http1.0/http.tcl
+  /usr/lib/tcl8.5/http1.0/pkgIndex.tcl
+  /usr/lib/tcl8.5/init.tcl
+  /usr/lib/tcl8.5/ldAix
+  /usr/lib/tcl8.5/msgs/af.msg
+  /usr/lib/tcl8.5/msgs/af_za.msg
+  /usr/lib/tcl8.5/msgs/ar.msg
+  /usr/lib/tcl8.5/msgs/ar_in.msg
+  /usr/lib/tcl8.5/msgs/ar_jo.msg
+  /usr/lib/tcl8.5/msgs/ar_lb.msg
+  /usr/lib/tcl8.5/msgs/ar_sy.msg
+  /usr/lib/tcl8.5/msgs/be.msg
+  /usr/lib/tcl8.5/msgs/bg.msg
+  /usr/lib/tcl8.5/msgs/bn.msg
+  /usr/lib/tcl8.5/msgs/bn_in.msg
+  /usr/lib/tcl8.5/msgs/ca.msg
+  /usr/lib/tcl8.5/msgs/cs.msg
+  /usr/lib/tcl8.5/msgs/da.msg
+  /usr/lib/tcl8.5/msgs/de.msg
+  /usr/lib/tcl8.5/msgs/de_at.msg
+  /usr/lib/tcl8.5/msgs/de_be.msg
+  /usr/lib/tcl8.5/msgs/el.msg
+  /usr/lib/tcl8.5/msgs/en_au.msg
+  /usr/lib/tcl8.5/msgs/en_be.msg
+  /usr/lib/tcl8.5/msgs/en_bw.msg
+  /usr/lib/tcl8.5/msgs/en_ca.msg
+  /usr/lib/tcl8.5/msgs/en_gb.msg
+  /usr/lib/tcl8.5/msgs/en_hk.msg
+  /usr/lib/tcl8.5/msgs/en_ie.msg
+  /usr/lib/tcl8.5/msgs/en_in.msg
+  /usr/lib/tcl8.5/msgs/en_nz.msg
+  /usr/lib/tcl8.5/msgs/en_ph.msg
+  /usr/lib/tcl8.5/msgs/en_sg.msg
+  /usr/lib/tcl8.5/msgs/en_za.msg
+  /usr/lib/tcl8.5/msgs/en_zw.msg
+  /usr/lib/tcl8.5/msgs/eo.msg
+  /usr/lib/tcl8.5/msgs/es.msg
+  /usr/lib/tcl8.5/msgs/es_ar.msg
+  /usr/lib/tcl8.5/msgs/es_bo.msg
+  /usr/lib/tcl8.5/msgs/es_cl.msg
+  /usr/lib/tcl8.5/msgs/es_co.msg
+  /usr/lib/tcl8.5/msgs/es_cr.msg
+  /usr/lib/tcl8.5/msgs/es_do.msg
+  /usr/lib/tcl8.5/msgs/es_ec.msg
+  /usr/lib/tcl8.5/msgs/es_gt.msg
+  /usr/lib/tcl8.5/msgs/es_hn.msg
+  /usr/lib/tcl8.5/msgs/es_mx.msg
+  /usr/lib/tcl8.5/msgs/es_ni.msg
+  /usr/lib/tcl8.5/msgs/es_pa.msg
+  /usr/lib/tcl8.5/msgs/es_pe.msg
+  /usr/lib/tcl8.5/msgs/es_pr.msg
+  /usr/lib/tcl8.5/msgs/es_py.msg
+  /usr/lib/tcl8.5/msgs/es_sv.msg
+  /usr/lib/tcl8.5/msgs/es_uy.msg
+  /usr/lib/tcl8.5/msgs/es_ve.msg
+  /usr/lib/tcl8.5/msgs/et.msg
+  /usr/lib/tcl8.5/msgs/eu.msg
+  /usr/lib/tcl8.5/msgs/eu_es.msg
+  /usr/lib/tcl8.5/msgs/fa.msg
+  /usr/lib/tcl8.5/msgs/fa_in.msg
+  /usr/lib/tcl8.5/msgs/fa_ir.msg
+  /usr/lib/tcl8.5/msgs/fi.msg
+  /usr/lib/tcl8.5/msgs/fo.msg
+  /usr/lib/tcl8.5/msgs/fo_fo.msg
+  /usr/lib/tcl8.5/msgs/fr.msg
+  /usr/lib/tcl8.5/msgs/fr_be.msg
+  /usr/lib/tcl8.5/msgs/fr_ca.msg
+  /usr/lib/tcl8.5/msgs/fr_ch.msg
+  /usr/lib/tcl8.5/msgs/ga.msg
+  /usr/lib/tcl8.5/msgs/ga_ie.msg
+  /usr/lib/tcl8.5/msgs/gl.msg
+  /usr/lib/tcl8.5/msgs/gl_es.msg
+  /usr/lib/tcl8.5/msgs/gv.msg
+  /usr/lib/tcl8.5/msgs/gv_gb.msg
+  /usr/lib/tcl8.5/msgs/he.msg
+  /usr/lib/tcl8.5/msgs/hi.msg
+  /usr/lib/tcl8.5/msgs/hi_in.msg
+  /usr/lib/tcl8.5/msgs/hr.msg
+  /usr/lib/tcl8.5/msgs/hu.msg
+  /usr/lib/tcl8.5/msgs/id.msg
+  /usr/lib/tcl8.5/msgs/id_id.msg
+  /usr/lib/tcl8.5/msgs/is.msg
+  /usr/lib/tcl8.5/msgs/it.msg
+  /usr/lib/tcl8.5/msgs/it_ch.msg
+  /usr/lib/tcl8.5/msgs/ja.msg
+  /usr/lib/tcl8.5/msgs/kl.msg
+  /usr/lib/tcl8.5/msgs/kl_gl.msg
+  /usr/lib/tcl8.5/msgs/ko.msg
+  /usr/lib/tcl8.5/msgs/ko_kr.msg
+  /usr/lib/tcl8.5/msgs/kok.msg
+  /usr/lib/tcl8.5/msgs/kok_in.msg
+  /usr/lib/tcl8.5/msgs/kw.msg
+  /usr/lib/tcl8.5/msgs/kw_gb.msg
+  /usr/lib/tcl8.5/msgs/lt.msg
+  /usr/lib/tcl8.5/msgs/lv.msg
+  /usr/lib/tcl8.5/msgs/mk.msg
+  /usr/lib/tcl8.5/msgs/mr.msg
+  /usr/lib/tcl8.5/msgs/mr_in.msg
+  /usr/lib/tcl8.5/msgs/ms.msg
+  /usr/lib/tcl8.5/msgs/ms_my.msg
+  /usr/lib/tcl8.5/msgs/mt.msg
+  /usr/lib/tcl8.5/msgs/nb.msg
+  /usr/lib/tcl8.5/msgs/nl.msg
+  /usr/lib/tcl8.5/msgs/nl_be.msg
+  /usr/lib/tcl8.5/msgs/nn.msg
+  /usr/lib/tcl8.5/msgs/pl.msg
+  /usr/lib/tcl8.5/msgs/pt.msg
+  /usr/lib/tcl8.5/msgs/pt_br.msg
+  /usr/lib/tcl8.5/msgs/ro.msg
+  /usr/lib/tcl8.5/msgs/ru.msg
+  /usr/lib/tcl8.5/msgs/ru_ua.msg
+  /usr/lib/tcl8.5/msgs/sh.msg
+  /usr/lib/tcl8.5/msgs/sk.msg
+  /usr/lib/tcl8.5/msgs/sl.msg
+  /usr/lib/tcl8.5/msgs/sq.msg
+  /usr/lib/tcl8.5/msgs/sr.msg
+  /usr/lib/tcl8.5/msgs/sv.msg
+  /usr/lib/tcl8.5/msgs/sw.msg
+  /usr/lib/tcl8.5/msgs/ta.msg
+  /usr/lib/tcl8.5/msgs/ta_in.msg
+  /usr/lib/tcl8.5/msgs/te.msg
+  /usr/lib/tcl8.5/msgs/te_in.msg
+  /usr/lib/tcl8.5/msgs/th.msg
+  /usr/lib/tcl8.5/msgs/tr.msg
+  /usr/lib/tcl8.5/msgs/uk.msg
+  /usr/lib/tcl8.5/msgs/vi.msg
+  /usr/lib/tcl8.5/msgs/zh.msg
+  /usr/lib/tcl8.5/msgs/zh_cn.msg
+  /usr/lib/tcl8.5/msgs/zh_hk.msg
+  /usr/lib/tcl8.5/msgs/zh_sg.msg
+  /usr/lib/tcl8.5/msgs/zh_tw.msg
+  /usr/lib/tcl8.5/opt0.4/optparse.tcl
+  /usr/lib/tcl8.5/opt0.4/pkgIndex.tcl
+  /usr/lib/tcl8.5/package.tcl
+  /usr/lib/tcl8.5/parray.tcl
+  /usr/lib/tcl8.5/safe.tcl
+  /usr/lib/tcl8.5/tclAppInit.c
+  /usr/lib/tcl8.5/tclConfig.sh
+  /usr/lib/tcl8.5/tclIndex
+  /usr/lib/tcl8.5/tm.tcl
+  /usr/lib/tcl8.5/word.tcl
+  /usr/lib/tcl8/8.4/http-2.7.2.tm
+  /usr/lib/tcl8/8.4/platform-1.0.3.tm
+  /usr/lib/tcl8/8.4/platform/shell-1.1.4.tm
+  /usr/lib/tcl8/8.5/msgcat-1.4.2.tm
+  /usr/lib/tcl8/8.5/tcltest-2.3.0.tm
+  /usr/lib/tclConfig.sh
+  /usr/share/doc/tcl/ChangeLog
+  /usr/share/doc/tcl/README
   /usr/share/man/man1/tclsh.1.gz
-  /usr/share/man/man3/TCL_MEM_DEBUG.3.gz
+  /usr/share/man/man3/TCL_MEM_DEBUG.3
   /usr/share/man/man3/Tcl_Access.3
   /usr/share/man/man3/Tcl_AddErrorInfo.3
   /usr/share/man/man3/Tcl_AddObjErrorInfo.3
   /usr/share/man/man3/Tcl_AlertNotifier.3
   /usr/share/man/man3/Tcl_Alloc.3
   /usr/share/man/man3/Tcl_AllocStatBuf.3
-  /usr/share/man/man3/Tcl_AllowExceptions.3.gz
-  /usr/share/man/man3/Tcl_AppInit.3.gz
+  /usr/share/man/man3/Tcl_AllowExceptions.3
+  /usr/share/man/man3/Tcl_AppInit.3
   /usr/share/man/man3/Tcl_AppendAllObjTypes.3
   /usr/share/man/man3/Tcl_AppendElement.3
+  /usr/share/man/man3/Tcl_AppendExportList.3
+  /usr/share/man/man3/Tcl_AppendFormatToObj.3
+  /usr/share/man/man3/Tcl_AppendLimitedToObj.3
+  /usr/share/man/man3/Tcl_AppendObjToErrorInfo.3
   /usr/share/man/man3/Tcl_AppendObjToObj.3
+  /usr/share/man/man3/Tcl_AppendPrintfToObj.3
   /usr/share/man/man3/Tcl_AppendResult.3
   /usr/share/man/man3/Tcl_AppendResultVA.3
   /usr/share/man/man3/Tcl_AppendStringsToObj.3
@@ -200,8 +338,8 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_AttemptAlloc.3
   /usr/share/man/man3/Tcl_AttemptRealloc.3
   /usr/share/man/man3/Tcl_AttemptSetObjLength.3
-  /usr/share/man/man3/Tcl_BackgroundError.3.gz
-  /usr/share/man/man3/Tcl_Backslash.3.gz
+  /usr/share/man/man3/Tcl_BackgroundError.3
+  /usr/share/man/man3/Tcl_Backslash.3
   /usr/share/man/man3/Tcl_BadChannelOption.3
   /usr/share/man/man3/Tcl_CallWhenDeleted.3
   /usr/share/man/man3/Tcl_CancelIdleCall.3
@@ -219,15 +357,16 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_ChannelSeekProc.3
   /usr/share/man/man3/Tcl_ChannelSetOptionProc.3
   /usr/share/man/man3/Tcl_ChannelThreadActionProc.3
+  /usr/share/man/man3/Tcl_ChannelTruncateProc.3
   /usr/share/man/man3/Tcl_ChannelVersion.3
   /usr/share/man/man3/Tcl_ChannelWatchProc.3
   /usr/share/man/man3/Tcl_ChannelWideSeekProc.3
   /usr/share/man/man3/Tcl_Chdir.3
   /usr/share/man/man3/Tcl_ClearChannelHandlers.3
   /usr/share/man/man3/Tcl_Close.3
-  /usr/share/man/man3/Tcl_CommandComplete.3.gz
+  /usr/share/man/man3/Tcl_CommandComplete.3
   /usr/share/man/man3/Tcl_CommandTraceInfo.3
-  /usr/share/man/man3/Tcl_Concat.3.gz
+  /usr/share/man/man3/Tcl_Concat.3
   /usr/share/man/man3/Tcl_ConcatObj.3
   /usr/share/man/man3/Tcl_ConditionFinalize.3
   /usr/share/man/man3/Tcl_ConditionNotify.3
@@ -240,14 +379,16 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_CreateChannel.3
   /usr/share/man/man3/Tcl_CreateChannelHandler.3
   /usr/share/man/man3/Tcl_CreateCloseHandler.3
-  /usr/share/man/man3/Tcl_CreateCommand.3.gz
+  /usr/share/man/man3/Tcl_CreateCommand.3
   /usr/share/man/man3/Tcl_CreateEncoding.3
+  /usr/share/man/man3/Tcl_CreateEnsemble.3
   /usr/share/man/man3/Tcl_CreateEventSource.3
   /usr/share/man/man3/Tcl_CreateExitHandler.3
   /usr/share/man/man3/Tcl_CreateFileHandler.3
   /usr/share/man/man3/Tcl_CreateHashEntry.3
   /usr/share/man/man3/Tcl_CreateInterp.3
   /usr/share/man/man3/Tcl_CreateMathFunc.3
+  /usr/share/man/man3/Tcl_CreateNamespace.3
   /usr/share/man/man3/Tcl_CreateObjCommand.3
   /usr/share/man/man3/Tcl_CreateObjTrace.3
   /usr/share/man/man3/Tcl_CreateSlave.3
@@ -281,13 +422,24 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_DeleteHashEntry.3
   /usr/share/man/man3/Tcl_DeleteHashTable.3
   /usr/share/man/man3/Tcl_DeleteInterp.3
+  /usr/share/man/man3/Tcl_DeleteNamespace.3
   /usr/share/man/man3/Tcl_DeleteThreadExitHandler.3
   /usr/share/man/man3/Tcl_DeleteTimerHandler.3
   /usr/share/man/man3/Tcl_DeleteTrace.3
   /usr/share/man/man3/Tcl_DetachChannel.3
   /usr/share/man/man3/Tcl_DetachPids.3
+  /usr/share/man/man3/Tcl_DictObjDone.3
+  /usr/share/man/man3/Tcl_DictObjFirst.3
+  /usr/share/man/man3/Tcl_DictObjGet.3
+  /usr/share/man/man3/Tcl_DictObjNext.3
+  /usr/share/man/man3/Tcl_DictObjPut.3
+  /usr/share/man/man3/Tcl_DictObjPutKeyList.3
+  /usr/share/man/man3/Tcl_DictObjRemove.3
+  /usr/share/man/man3/Tcl_DictObjRemoveKeyList.3
+  /usr/share/man/man3/Tcl_DictObjSize.3
+  /usr/share/man/man3/Tcl_DiscardInterpState.3
   /usr/share/man/man3/Tcl_DiscardResult.3
-  /usr/share/man/man3/Tcl_DoOneEvent.3.gz
+  /usr/share/man/man3/Tcl_DoOneEvent.3
   /usr/share/man/man3/Tcl_DoWhenIdle.3
   /usr/share/man/man3/Tcl_DontCallWhenDeleted.3
   /usr/share/man/man3/Tcl_DumpActiveMemory.3
@@ -305,6 +457,7 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_EventuallyFree.3
   /usr/share/man/man3/Tcl_Exit.3
   /usr/share/man/man3/Tcl_ExitThread.3
+  /usr/share/man/man3/Tcl_Export.3
   /usr/share/man/man3/Tcl_ExposeCommand.3
   /usr/share/man/man3/Tcl_ExprBoolean.3
   /usr/share/man/man3/Tcl_ExprBooleanObj.3
@@ -326,6 +479,7 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_FSDeleteFile.3
   /usr/share/man/man3/Tcl_FSEqualPaths.3
   /usr/share/man/man3/Tcl_FSEvalFile.3
+  /usr/share/man/man3/Tcl_FSEvalFileEx.3
   /usr/share/man/man3/Tcl_FSFileAttrStrings.3
   /usr/share/man/man3/Tcl_FSFileAttrsGet.3
   /usr/share/man/man3/Tcl_FSFileAttrsSet.3
@@ -359,10 +513,15 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_Finalize.3
   /usr/share/man/man3/Tcl_FinalizeNotifier.3
   /usr/share/man/man3/Tcl_FinalizeThread.3
+  /usr/share/man/man3/Tcl_FindCommand.3
+  /usr/share/man/man3/Tcl_FindEnsemble.3
   /usr/share/man/man3/Tcl_FindExecutable.3
   /usr/share/man/man3/Tcl_FindHashEntry.3
+  /usr/share/man/man3/Tcl_FindNamespace.3
   /usr/share/man/man3/Tcl_FirstHashEntry.3
   /usr/share/man/man3/Tcl_Flush.3
+  /usr/share/man/man3/Tcl_ForgetImport.3
+  /usr/share/man/man3/Tcl_Format.3
   /usr/share/man/man3/Tcl_Free.3
   /usr/share/man/man3/Tcl_FreeEncoding.3
   /usr/share/man/man3/Tcl_FreeParse.3
@@ -370,11 +529,14 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_GetAlias.3
   /usr/share/man/man3/Tcl_GetAliasObj.3
   /usr/share/man/man3/Tcl_GetAssocData.3
+  /usr/share/man/man3/Tcl_GetBignumFromObj.3
   /usr/share/man/man3/Tcl_GetBoolean.3
   /usr/share/man/man3/Tcl_GetBooleanFromObj.3
   /usr/share/man/man3/Tcl_GetByteArrayFromObj.3
   /usr/share/man/man3/Tcl_GetChannel.3
   /usr/share/man/man3/Tcl_GetChannelBufferSize.3
+  /usr/share/man/man3/Tcl_GetChannelError.3
+  /usr/share/man/man3/Tcl_GetChannelErrorInterp.3
   /usr/share/man/man3/Tcl_GetChannelHandle.3
   /usr/share/man/man3/Tcl_GetChannelInstanceData.3
   /usr/share/man/man3/Tcl_GetChannelMode.3
@@ -390,18 +552,28 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_GetCommandInfo.3
   /usr/share/man/man3/Tcl_GetCommandInfoFromToken.3
   /usr/share/man/man3/Tcl_GetCommandName.3
+  /usr/share/man/man3/Tcl_GetCurrentNamespace.3
   /usr/share/man/man3/Tcl_GetCurrentThread.3
   /usr/share/man/man3/Tcl_GetCwd.3
   /usr/share/man/man3/Tcl_GetDefaultEncodingDir.3
   /usr/share/man/man3/Tcl_GetDouble.3
   /usr/share/man/man3/Tcl_GetDoubleFromObj.3
   /usr/share/man/man3/Tcl_GetEncoding.3
+  /usr/share/man/man3/Tcl_GetEncodingFromObj.3
   /usr/share/man/man3/Tcl_GetEncodingName.3
+  /usr/share/man/man3/Tcl_GetEncodingNameFromEnvironment.3
   /usr/share/man/man3/Tcl_GetEncodingNames.3
+  /usr/share/man/man3/Tcl_GetEncodingSearchPath.3
+  /usr/share/man/man3/Tcl_GetEnsembleFlags.3
+  /usr/share/man/man3/Tcl_GetEnsembleMappingDict.3
+  /usr/share/man/man3/Tcl_GetEnsembleNamespace.3
+  /usr/share/man/man3/Tcl_GetEnsembleSubcommandList.3
+  /usr/share/man/man3/Tcl_GetEnsembleUnknownHandler.3
   /usr/share/man/man3/Tcl_GetErrno.3
+  /usr/share/man/man3/Tcl_GetGlobalNamespace.3
   /usr/share/man/man3/Tcl_GetHashKey.3
   /usr/share/man/man3/Tcl_GetHashValue.3
-  /usr/share/man/man3/Tcl_GetHostName.3.gz
+  /usr/share/man/man3/Tcl_GetHostName.3
   /usr/share/man/man3/Tcl_GetIndexFromObj.3
   /usr/share/man/man3/Tcl_GetIndexFromObjStruct.3
   /usr/share/man/man3/Tcl_GetInt.3
@@ -411,13 +583,14 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_GetMaster.3
   /usr/share/man/man3/Tcl_GetMathFuncInfo.3
   /usr/share/man/man3/Tcl_GetNameOfExecutable.3
-  /usr/share/man/man3/Tcl_GetOSTypeFromObj.3
+  /usr/share/man/man3/Tcl_GetNamespaceUnknownHandler.3
   /usr/share/man/man3/Tcl_GetObjResult.3
   /usr/share/man/man3/Tcl_GetObjType.3
-  /usr/share/man/man3/Tcl_GetOpenFile.3.gz
+  /usr/share/man/man3/Tcl_GetOpenFile.3
   /usr/share/man/man3/Tcl_GetPathType.3
   /usr/share/man/man3/Tcl_GetRange.3
   /usr/share/man/man3/Tcl_GetRegExpFromObj.3
+  /usr/share/man/man3/Tcl_GetReturnOptions.3
   /usr/share/man/man3/Tcl_GetServiceMode.3
   /usr/share/man/man3/Tcl_GetSlave.3
   /usr/share/man/man3/Tcl_GetStackedChannel.3
@@ -426,7 +599,7 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_GetStringFromObj.3
   /usr/share/man/man3/Tcl_GetStringResult.3
   /usr/share/man/man3/Tcl_GetThreadData.3
-  /usr/share/man/man3/Tcl_GetTime.3.gz
+  /usr/share/man/man3/Tcl_GetTime.3
   /usr/share/man/man3/Tcl_GetTopChannel.3
   /usr/share/man/man3/Tcl_GetUniChar.3
   /usr/share/man/man3/Tcl_GetUnicode.3
@@ -434,7 +607,7 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_GetVar.3
   /usr/share/man/man3/Tcl_GetVar2.3
   /usr/share/man/man3/Tcl_GetVar2Ex.3
-  /usr/share/man/man3/Tcl_GetVersion.3.gz
+  /usr/share/man/man3/Tcl_GetVersion.3
   /usr/share/man/man3/Tcl_GetWideIntFromObj.3
   /usr/share/man/man3/Tcl_Gets.3
   /usr/share/man/man3/Tcl_GetsObj.3
@@ -442,27 +615,44 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_GlobalEvalObj.3
   /usr/share/man/man3/Tcl_HashStats.3
   /usr/share/man/man3/Tcl_HideCommand.3
+  /usr/share/man/man3/Tcl_Import.3
   /usr/share/man/man3/Tcl_IncrRefCount.3
-  /usr/share/man/man3/Tcl_Init.3.gz
+  /usr/share/man/man3/Tcl_Init.3
   /usr/share/man/man3/Tcl_InitCustomHashTable.3
   /usr/share/man/man3/Tcl_InitHashTable.3
   /usr/share/man/man3/Tcl_InitMemory.3
   /usr/share/man/man3/Tcl_InitNotifier.3
   /usr/share/man/man3/Tcl_InitObjHashTable.3
-  /usr/share/man/man3/Tcl_InitStubs.3.gz
+  /usr/share/man/man3/Tcl_InitStubs.3
   /usr/share/man/man3/Tcl_InputBlocked.3
   /usr/share/man/man3/Tcl_InputBuffered.3
-  /usr/share/man/man3/Tcl_Interp.3.gz
+  /usr/share/man/man3/Tcl_Interp.3
   /usr/share/man/man3/Tcl_InterpDeleted.3
   /usr/share/man/man3/Tcl_InvalidateStringRep.3
   /usr/share/man/man3/Tcl_IsChannelExisting.3
   /usr/share/man/man3/Tcl_IsChannelRegistered.3
   /usr/share/man/man3/Tcl_IsChannelShared.3
+  /usr/share/man/man3/Tcl_IsEnsemble.3
   /usr/share/man/man3/Tcl_IsSafe.3
   /usr/share/man/man3/Tcl_IsShared.3
   /usr/share/man/man3/Tcl_IsStandardChannel.3
   /usr/share/man/man3/Tcl_JoinPath.3
   /usr/share/man/man3/Tcl_JoinThread.3
+  /usr/share/man/man3/Tcl_LimitAddHandler.3
+  /usr/share/man/man3/Tcl_LimitCheck.3
+  /usr/share/man/man3/Tcl_LimitExceeded.3
+  /usr/share/man/man3/Tcl_LimitGetCommands.3
+  /usr/share/man/man3/Tcl_LimitGetGranularity.3
+  /usr/share/man/man3/Tcl_LimitGetTime.3
+  /usr/share/man/man3/Tcl_LimitReady.3
+  /usr/share/man/man3/Tcl_LimitRemoveHandler.3
+  /usr/share/man/man3/Tcl_LimitSetCommands.3
+  /usr/share/man/man3/Tcl_LimitSetGranularity.3
+  /usr/share/man/man3/Tcl_LimitSetTime.3
+  /usr/share/man/man3/Tcl_LimitTypeEnabled.3
+  /usr/share/man/man3/Tcl_LimitTypeExceeded.3
+  /usr/share/man/man3/Tcl_LimitTypeReset.3
+  /usr/share/man/man3/Tcl_LimitTypeSet.3
   /usr/share/man/man3/Tcl_LinkVar.3
   /usr/share/man/man3/Tcl_ListMathFuncs.3
   /usr/share/man/man3/Tcl_ListObjAppendElement.3
@@ -472,10 +662,6 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_ListObjLength.3
   /usr/share/man/man3/Tcl_ListObjReplace.3
   /usr/share/man/man3/Tcl_LogCommandInfo.3
-  /usr/share/man/man3/Tcl_MacConvertTextResource.3
-  /usr/share/man/man3/Tcl_MacEvalResource.3
-  /usr/share/man/man3/Tcl_MacFindResource.3
-  /usr/share/man/man3/Tcl_MacSetEventProc.3
   /usr/share/man/man3/Tcl_Main.3
   /usr/share/man/man3/Tcl_MakeFileChannel.3
   /usr/share/man/man3/Tcl_MakeSafe.3
@@ -484,13 +670,14 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_MutexFinalize.3
   /usr/share/man/man3/Tcl_MutexLock.3
   /usr/share/man/man3/Tcl_MutexUnlock.3
+  /usr/share/man/man3/Tcl_NewBignumObj.3
   /usr/share/man/man3/Tcl_NewBooleanObj.3
   /usr/share/man/man3/Tcl_NewByteArrayObj.3
+  /usr/share/man/man3/Tcl_NewDictObj.3
   /usr/share/man/man3/Tcl_NewDoubleObj.3
   /usr/share/man/man3/Tcl_NewIntObj.3
   /usr/share/man/man3/Tcl_NewListObj.3
   /usr/share/man/man3/Tcl_NewLongObj.3
-  /usr/share/man/man3/Tcl_NewOSTypeObj.3
   /usr/share/man/man3/Tcl_NewObj.3
   /usr/share/man/man3/Tcl_NewStringObj.3
   /usr/share/man/man3/Tcl_NewUnicodeObj.3
@@ -499,6 +686,7 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_NotifyChannel.3
   /usr/share/man/man3/Tcl_NumUtfChars.3
   /usr/share/man/man3/Tcl_ObjGetVar2.3
+  /usr/share/man/man3/Tcl_ObjPrintf.3
   /usr/share/man/man3/Tcl_ObjSetVar2.3
   /usr/share/man/man3/Tcl_OpenCommandChannel.3
   /usr/share/man/man3/Tcl_OpenFileChannel.3
@@ -519,18 +707,20 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_PkgProvideEx.3
   /usr/share/man/man3/Tcl_PkgRequire.3
   /usr/share/man/man3/Tcl_PkgRequireEx.3
+  /usr/share/man/man3/Tcl_PkgRequireProc.3
   /usr/share/man/man3/Tcl_PosixError.3
   /usr/share/man/man3/Tcl_Preserve.3
-  /usr/share/man/man3/Tcl_PrintDouble.3.gz
-  /usr/share/man/man3/Tcl_PutEnv.3.gz
+  /usr/share/man/man3/Tcl_PrintDouble.3
+  /usr/share/man/man3/Tcl_PutEnv.3
+  /usr/share/man/man3/Tcl_QueryTimeProc.3
   /usr/share/man/man3/Tcl_QueueEvent.3
   /usr/share/man/man3/Tcl_Read.3
   /usr/share/man/man3/Tcl_ReadChars.3
   /usr/share/man/man3/Tcl_ReadRaw.3
   /usr/share/man/man3/Tcl_Realloc.3
   /usr/share/man/man3/Tcl_ReapDetachedProcs.3
-  /usr/share/man/man3/Tcl_RecordAndEval.3.gz
-  /usr/share/man/man3/Tcl_RecordAndEvalObj.3.gz
+  /usr/share/man/man3/Tcl_RecordAndEval.3
+  /usr/share/man/man3/Tcl_RecordAndEvalObj.3
   /usr/share/man/man3/Tcl_RegExpCompile.3
   /usr/share/man/man3/Tcl_RegExpExec.3
   /usr/share/man/man3/Tcl_RegExpExecObj.3
@@ -539,10 +729,13 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_RegExpMatchObj.3
   /usr/share/man/man3/Tcl_RegExpRange.3
   /usr/share/man/man3/Tcl_RegisterChannel.3
+  /usr/share/man/man3/Tcl_RegisterConfig.3
   /usr/share/man/man3/Tcl_RegisterObjType.3
   /usr/share/man/man3/Tcl_Release.3
   /usr/share/man/man3/Tcl_ResetResult.3
+  /usr/share/man/man3/Tcl_RestoreInterpState.3
   /usr/share/man/man3/Tcl_RestoreResult.3
+  /usr/share/man/man3/Tcl_SaveInterpState.3
   /usr/share/man/man3/Tcl_SaveResult.3
   /usr/share/man/man3/Tcl_ScanCountedElement.3
   /usr/share/man/man3/Tcl_ScanElement.3
@@ -550,35 +743,46 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_ServiceAll.3
   /usr/share/man/man3/Tcl_ServiceEvent.3
   /usr/share/man/man3/Tcl_SetAssocData.3
+  /usr/share/man/man3/Tcl_SetBignumObj.3
   /usr/share/man/man3/Tcl_SetBooleanObj.3
   /usr/share/man/man3/Tcl_SetByteArrayLength.3
   /usr/share/man/man3/Tcl_SetByteArrayObj.3
   /usr/share/man/man3/Tcl_SetChannelBufferSize.3
+  /usr/share/man/man3/Tcl_SetChannelError.3
+  /usr/share/man/man3/Tcl_SetChannelErrorInterp.3
   /usr/share/man/man3/Tcl_SetChannelOption.3
   /usr/share/man/man3/Tcl_SetCommandInfo.3
   /usr/share/man/man3/Tcl_SetCommandInfoFromToken.3
   /usr/share/man/man3/Tcl_SetDefaultEncodingDir.3
   /usr/share/man/man3/Tcl_SetDoubleObj.3
+  /usr/share/man/man3/Tcl_SetEncodingSearchPath.3
+  /usr/share/man/man3/Tcl_SetEnsembleFlags.3
+  /usr/share/man/man3/Tcl_SetEnsembleMappingDict.3
+  /usr/share/man/man3/Tcl_SetEnsembleSubcommandList.3
+  /usr/share/man/man3/Tcl_SetEnsembleUnknownHandler.3
   /usr/share/man/man3/Tcl_SetErrno.3
   /usr/share/man/man3/Tcl_SetErrorCode.3
   /usr/share/man/man3/Tcl_SetErrorCodeVA.3
+  /usr/share/man/man3/Tcl_SetExitProc.3
   /usr/share/man/man3/Tcl_SetHashValue.3
   /usr/share/man/man3/Tcl_SetIntObj.3
   /usr/share/man/man3/Tcl_SetListObj.3
   /usr/share/man/man3/Tcl_SetLongObj.3
   /usr/share/man/man3/Tcl_SetMainLoop.3
   /usr/share/man/man3/Tcl_SetMaxBlockTime.3
-  /usr/share/man/man3/Tcl_SetOSTypeObj.3
+  /usr/share/man/man3/Tcl_SetNamespaceUnknownHandler.3
   /usr/share/man/man3/Tcl_SetObjErrorCode.3
   /usr/share/man/man3/Tcl_SetObjLength.3
   /usr/share/man/man3/Tcl_SetObjResult.3
   /usr/share/man/man3/Tcl_SetPanicProc.3
-  /usr/share/man/man3/Tcl_SetRecursionLimit.3.gz
+  /usr/share/man/man3/Tcl_SetRecursionLimit.3
   /usr/share/man/man3/Tcl_SetResult.3
+  /usr/share/man/man3/Tcl_SetReturnOptions.3
   /usr/share/man/man3/Tcl_SetServiceMode.3
   /usr/share/man/man3/Tcl_SetStdChannel.3
   /usr/share/man/man3/Tcl_SetStringObj.3
   /usr/share/man/man3/Tcl_SetSystemEncoding.3
+  /usr/share/man/man3/Tcl_SetTimeProc.3
   /usr/share/man/man3/Tcl_SetTimer.3
   /usr/share/man/man3/Tcl_SetUnicodeObj.3
   /usr/share/man/man3/Tcl_SetVar.3
@@ -587,25 +791,27 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_SetWideIntObj.3
   /usr/share/man/man3/Tcl_SignalId.3
   /usr/share/man/man3/Tcl_SignalMsg.3
-  /usr/share/man/man3/Tcl_Sleep.3.gz
-  /usr/share/man/man3/Tcl_SourceRCFile.3.gz
+  /usr/share/man/man3/Tcl_Sleep.3
+  /usr/share/man/man3/Tcl_SourceRCFile.3
   /usr/share/man/man3/Tcl_SpliceChannel.3
   /usr/share/man/man3/Tcl_SplitList.3
   /usr/share/man/man3/Tcl_SplitPath.3
   /usr/share/man/man3/Tcl_StackChannel.3
-  /usr/share/man/man3/Tcl_StandardChannels.3.gz
+  /usr/share/man/man3/Tcl_StandardChannels.3
   /usr/share/man/man3/Tcl_Stat.3
-  /usr/share/man/man3/Tcl_StaticPackage.3.gz
+  /usr/share/man/man3/Tcl_StaticPackage.3
   /usr/share/man/man3/Tcl_StringCaseMatch.3
   /usr/share/man/man3/Tcl_StringMatch.3
-  /usr/share/man/man3/Tcl_SubstObj.3.gz
+  /usr/share/man/man3/Tcl_SubstObj.3
+  /usr/share/man/man3/Tcl_TakeBignumFromObj.3
   /usr/share/man/man3/Tcl_Tell.3
   /usr/share/man/man3/Tcl_ThreadAlert.3
   /usr/share/man/man3/Tcl_ThreadQueueEvent.3
   /usr/share/man/man3/Tcl_TraceCommand.3
   /usr/share/man/man3/Tcl_TraceVar.3
   /usr/share/man/man3/Tcl_TraceVar2.3
-  /usr/share/man/man3/Tcl_TranslateFileName.3.gz
+  /usr/share/man/man3/Tcl_TranslateFileName.3
+  /usr/share/man/man3/Tcl_TruncateChannel.3
   /usr/share/man/man3/Tcl_Ungets.3
   /usr/share/man/man3/Tcl_UniChar.3
   /usr/share/man/man3/Tcl_UniCharAtIndex.3
@@ -667,19 +873,18 @@ Files included in the binary package:
   /usr/share/man/man3/Tcl_WriteChars.3
   /usr/share/man/man3/Tcl_WriteObj.3
   /usr/share/man/man3/Tcl_WriteRaw.3
-  /usr/share/man/man3/Tcl_WrongNumArgs.3.gz
+  /usr/share/man/man3/Tcl_WrongNumArgs.3
   /usr/share/man/man3/attemptckalloc.3
   /usr/share/man/man3/attemptckrealloc.3
   /usr/share/man/man3/ckalloc.3
   /usr/share/man/man3/ckfree.3
   /usr/share/man/man3/ckrealloc.3
-  /usr/share/man/man3/panic.3
-  /usr/share/man/man3/panicVA.3
-  /usr/share/man/mann/SafeBase.n.gz
-  /usr/share/man/mann/Tcl.n.gz
-  /usr/share/man/mann/after.n.gz
-  /usr/share/man/mann/append.n.gz
-  /usr/share/man/mann/array.n.gz
+  /usr/share/man/mann/SafeBase.n
+  /usr/share/man/mann/Tcl.n
+  /usr/share/man/mann/after.n
+  /usr/share/man/mann/append.n
+  /usr/share/man/mann/apply.n
+  /usr/share/man/mann/array.n
   /usr/share/man/mann/auto_execok.n
   /usr/share/man/mann/auto_import.n
   /usr/share/man/mann/auto_load.n
@@ -687,125 +892,121 @@ Files included in the binary package:
   /usr/share/man/mann/auto_mkindex_old.n
   /usr/share/man/mann/auto_qualify.n
   /usr/share/man/mann/auto_reset.n
-  /usr/share/man/mann/bgerror.n.gz
-  /usr/share/man/mann/binary.n.gz
-  /usr/share/man/mann/break.n.gz
-  /usr/share/man/mann/case.n.gz
-  /usr/share/man/mann/catch.n.gz
-  /usr/share/man/mann/cd.n.gz
-  /usr/share/man/mann/clock.n.gz
-  /usr/share/man/mann/close.n.gz
-  /usr/share/man/mann/concat.n.gz
-  /usr/share/man/mann/continue.n.gz
-  /usr/share/man/mann/dde.n.gz
-  /usr/share/man/mann/encoding.n.gz
-  /usr/share/man/mann/eof.n.gz
-  /usr/share/man/mann/error.n.gz
-  /usr/share/man/mann/eval.n.gz
-  /usr/share/man/mann/exec.n.gz
-  /usr/share/man/mann/exit.n.gz
-  /usr/share/man/mann/expr.n.gz
-  /usr/share/man/mann/fblocked.n.gz
-  /usr/share/man/mann/fconfigure.n.gz
-  /usr/share/man/mann/fcopy.n.gz
-  /usr/share/man/mann/file.n.gz
-  /usr/share/man/mann/fileevent.n.gz
-  /usr/share/man/mann/filename.n.gz
-  /usr/share/man/mann/flush.n.gz
-  /usr/share/man/mann/for.n.gz
-  /usr/share/man/mann/foreach.n.gz
-  /usr/share/man/mann/format.n.gz
-  /usr/share/man/mann/gets.n.gz
-  /usr/share/man/mann/glob.n.gz
-  /usr/share/man/mann/global.n.gz
-  /usr/share/man/mann/history.n.gz
-  /usr/share/man/mann/http.n.gz
-  /usr/share/man/mann/if.n.gz
-  /usr/share/man/mann/incr.n.gz
-  /usr/share/man/mann/info.n.gz
-  /usr/share/man/mann/interp.n.gz
-  /usr/share/man/mann/join.n.gz
-  /usr/share/man/mann/lappend.n.gz
-  /usr/share/man/mann/lindex.n.gz
-  /usr/share/man/mann/linsert.n.gz
-  /usr/share/man/mann/list.n.gz
-  /usr/share/man/mann/llength.n.gz
-  /usr/share/man/mann/load.n.gz
-  /usr/share/man/mann/lrange.n.gz
-  /usr/share/man/mann/lreplace.n.gz
-  /usr/share/man/mann/lsearch.n.gz
-  /usr/share/man/mann/lset.n.gz
-  /usr/share/man/mann/lsort.n.gz
-  /usr/share/man/mann/memory.n.gz
-  /usr/share/man/mann/msgcat.n.gz
-  /usr/share/man/mann/namespace.n.gz
-  /usr/share/man/mann/open.n.gz
-  /usr/share/man/mann/package.n.gz
+  /usr/share/man/mann/bgerror.n
+  /usr/share/man/mann/binary.n
+  /usr/share/man/mann/break.n
+  /usr/share/man/mann/case.n
+  /usr/share/man/mann/catch.n
+  /usr/share/man/mann/cd.n
+  /usr/share/man/mann/chan.n
+  /usr/share/man/mann/clock.n
+  /usr/share/man/mann/close.n
+  /usr/share/man/mann/concat.n
+  /usr/share/man/mann/continue.n
+  /usr/share/man/mann/dde.n
+  /usr/share/man/mann/dict.n
+  /usr/share/man/mann/encoding.n
+  /usr/share/man/mann/eof.n
+  /usr/share/man/mann/error.n
+  /usr/share/man/mann/eval.n
+  /usr/share/man/mann/exec.n
+  /usr/share/man/mann/exit.n
+  /usr/share/man/mann/expr.n
+  /usr/share/man/mann/fblocked.n
+  /usr/share/man/mann/fconfigure.n
+  /usr/share/man/mann/fcopy.n
+  /usr/share/man/mann/file.n
+  /usr/share/man/mann/fileevent.n
+  /usr/share/man/mann/filename.n
+  /usr/share/man/mann/flush.n
+  /usr/share/man/mann/for.n
+  /usr/share/man/mann/foreach.n
+  /usr/share/man/mann/format.n
+  /usr/share/man/mann/gets.n
+  /usr/share/man/mann/glob.n
+  /usr/share/man/mann/global.n
+  /usr/share/man/mann/history.n
+  /usr/share/man/mann/http.n
+  /usr/share/man/mann/if.n
+  /usr/share/man/mann/incr.n
+  /usr/share/man/mann/info.n
+  /usr/share/man/mann/interp.n
+  /usr/share/man/mann/join.n
+  /usr/share/man/mann/lappend.n
+  /usr/share/man/mann/lassign.n
+  /usr/share/man/mann/lindex.n
+  /usr/share/man/mann/linsert.n
+  /usr/share/man/mann/list.n
+  /usr/share/man/mann/llength.n
+  /usr/share/man/mann/load.n
+  /usr/share/man/mann/lrange.n
+  /usr/share/man/mann/lrepeat.n
+  /usr/share/man/mann/lreplace.n
+  /usr/share/man/mann/lreverse.n
+  /usr/share/man/mann/lsearch.n
+  /usr/share/man/mann/lset.n
+  /usr/share/man/mann/lsort.n
+  /usr/share/man/mann/mathfunc.n
+  /usr/share/man/mann/mathop.n
+  /usr/share/man/mann/memory.n
+  /usr/share/man/mann/msgcat.n
+  /usr/share/man/mann/namespace.n
+  /usr/share/man/mann/open.n
+  /usr/share/man/mann/package.n
   /usr/share/man/mann/parray.n
-  /usr/share/man/mann/pid.n.gz
-  /usr/share/man/mann/pkg_mkIndex.n.gz
-  /usr/share/man/mann/proc.n.gz
-  /usr/share/man/mann/puts.n.gz
-  /usr/share/man/mann/pwd.n.gz
-  /usr/share/man/mann/re_syntax.n.gz
-  /usr/share/man/mann/read.n.gz
-  /usr/share/man/mann/regexp.n.gz
-  /usr/share/man/mann/registry.n.gz
-  /usr/share/man/mann/regsub.n.gz
-  /usr/share/man/mann/rename.n.gz
-  /usr/share/man/mann/resource.n.gz
-  /usr/share/man/mann/return.n.gz
-  /usr/share/man/mann/scan.n.gz
-  /usr/share/man/mann/seek.n.gz
-  /usr/share/man/mann/set.n.gz
-  /usr/share/man/mann/socket.n.gz
-  /usr/share/man/mann/source.n.gz
-  /usr/share/man/mann/split.n.gz
-  /usr/share/man/mann/string.n.gz
-  /usr/share/man/mann/subst.n.gz
-  /usr/share/man/mann/switch.n.gz
+  /usr/share/man/mann/pid.n
+  /usr/share/man/mann/pkg::create.n
+  /usr/share/man/mann/pkg_mkIndex.n
+  /usr/share/man/mann/platform.n
+  /usr/share/man/mann/platform::shell.n
+  /usr/share/man/mann/proc.n
+  /usr/share/man/mann/puts.n
+  /usr/share/man/mann/pwd.n
+  /usr/share/man/mann/re_syntax.n
+  /usr/share/man/mann/read.n
+  /usr/share/man/mann/refchan.n
+  /usr/share/man/mann/regexp.n
+  /usr/share/man/mann/registry.n
+  /usr/share/man/mann/regsub.n
+  /usr/share/man/mann/rename.n
+  /usr/share/man/mann/return.n
+  /usr/share/man/mann/scan.n
+  /usr/share/man/mann/seek.n
+  /usr/share/man/mann/set.n
+  /usr/share/man/mann/socket.n
+  /usr/share/man/mann/source.n
+  /usr/share/man/mann/split.n
+  /usr/share/man/mann/string.n
+  /usr/share/man/mann/subst.n
+  /usr/share/man/mann/switch.n
   /usr/share/man/mann/tcl_endOfWord.n
   /usr/share/man/mann/tcl_findLibrary.n
   /usr/share/man/mann/tcl_startOfNextWord.n
   /usr/share/man/mann/tcl_startOfPreviousWord.n
   /usr/share/man/mann/tcl_wordBreakAfter.n
   /usr/share/man/mann/tcl_wordBreakBefore.n
-  /usr/share/man/mann/tcltest.n.gz
-  /usr/share/man/mann/tclvars.n.gz
-  /usr/share/man/mann/tell.n.gz
-  /usr/share/man/mann/time.n.gz
-  /usr/share/man/mann/trace.n.gz
-  /usr/share/man/mann/unknown.n.gz
-  /usr/share/man/mann/unset.n.gz
-  /usr/share/man/mann/update.n.gz
-  /usr/share/man/mann/uplevel.n.gz
-  /usr/share/man/mann/upvar.n.gz
-  /usr/share/man/mann/variable.n.gz
-  /usr/share/man/mann/vwait.n.gz
-  /usr/share/man/mann/while.n.gz
+  /usr/share/man/mann/tcltest.n
+  /usr/share/man/mann/tclvars.n
+  /usr/share/man/mann/tell.n
+  /usr/share/man/mann/time.n
+  /usr/share/man/mann/tm.n
+  /usr/share/man/mann/trace.n
+  /usr/share/man/mann/unknown.n
+  /usr/share/man/mann/unload.n
+  /usr/share/man/mann/unset.n
+  /usr/share/man/mann/update.n
+  /usr/share/man/mann/uplevel.n
+  /usr/share/man/mann/upvar.n
+  /usr/share/man/mann/variable.n
+  /usr/share/man/mann/vwait.n
+  /usr/share/man/mann/while.n
 
 ------------------
 
 Port Notes:
 
------ version 8.4.19-2 -----
-Move tclConfig.sh to /usr/lib/tcl8.4.
-
------ version 8.4.19-1 -----
-Version bump.
-
------ version 8.4.18-1 -----
-Version bump.
-
------ version 8.4.16-1 -----
-Version bump.
-
------ version 8.4.15-1 -----
-Version bump.
-Fixed loading of libraries which being with "cyg" prefix.
-
------ version 8.4.12-1 -----
-Initial release of unix-based Tcl for Cygwin.
+----- version 8.5.6-1 -----
+Initial release of unix-based Tcl for Cygwin-1.7.
 
 
 Cygwin port maintained by:
