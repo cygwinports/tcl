@@ -22,7 +22,7 @@
 -            TCL_BUILD_LIB_SPEC="-Wl,-bI:`pwd | sed -e 's/ /\\\\ /g'`/${TCL_BUILD_EXP_FILE} -L`pwd | sed -e 's/ /\\\\ /g'`"
 -            TCL_LIB_SPEC="-Wl,-bI:${libdir}/${TCL_EXP_FILE} -L${libdir}"
 +            TCL_BUILD_LIB_SPEC="-Wl,`pwd | sed -e 's/ /\\\\ /g'`/${TCL_BUILD_EXP_FILE} -L`pwd | sed -e 's/ /\\\\ /g'`"
-+            TCL_LIB_SPEC="${libdir}/${TCL_EXP_FILE} -L${libdir}"
++            TCL_LIB_SPEC="-L${libdir} -ltcl${TCL_VERSION}${TCL_DBGX}"
          else
              TCL_BUILD_LIB_SPEC="-bI:`pwd | sed -e 's/ /\\\\ /g'`/${TCL_BUILD_EXP_FILE}"
              TCL_LIB_SPEC="-bI:${libdir}/${TCL_EXP_FILE}"
