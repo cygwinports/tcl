@@ -28,7 +28,7 @@ src_install() {
 	cyginstall
 
 	mv ${D}/usr/lib/libtcl${slot}.dll ${D}/usr/bin/
-	dolib libtcl${slot}.a
+	dolib libtcl${slot}.a libtcl${slot}.dll.a
 
 	sed -i \
 		-e "s|^\(TCL_BUILD_LIB_SPEC\)='.*|\1='-Wl,/usr/lib/libtcl${slot}.dll.a'|" \

@@ -1,5 +1,5 @@
---- origsrc/tcl8.5.6/generic/tclLoad.c	2008-11-13 18:22:39.000000000 -0600
-+++ src/tcl8.5.6/generic/tclLoad.c	2009-02-26 11:24:06.430663600 -0600
+--- origsrc/tcl8.5.9/generic/tclLoad.c	2008-11-13 18:22:39.000000000 -0600
++++ src/tcl8.5.9/generic/tclLoad.c	2011-02-15 01:34:56.716143000 -0600
 @@ -310,6 +310,12 @@ Tcl_LoadObjCmd(
  			&& (pkgGuess[2] == 'b')) {
  		    pkgGuess += 3;
@@ -13,46 +13,15 @@
  		for (p = pkgGuess; *p != 0; p += offset) {
  		    offset = Tcl_UtfToUniChar(p, &ch);
  		    if ((ch > 0x100)
---- origsrc/tcl8.5.8/unix/configure.in	2009-11-13 12:38:45.000000000 -0600
-+++ src/tcl8.5.8/unix/configure.in	2010-06-22 16:53:01.937824600 -0500
-@@ -806,8 +806,8 @@ else
-         eval "TCL_EXP_FILE=libtcl${TCL_EXPORT_FILE_SUFFIX}"
-     
-         if test "$GCC" = "yes" ; then
--            TCL_BUILD_LIB_SPEC="-Wl,-bI:`pwd | sed -e 's/ /\\\\ /g'`/${TCL_BUILD_EXP_FILE} -L`pwd | sed -e 's/ /\\\\ /g'`"
--            TCL_LIB_SPEC="-Wl,-bI:${libdir}/${TCL_EXP_FILE} -L${libdir}"
-+            TCL_BUILD_LIB_SPEC="-Wl,`pwd | sed -e 's/ /\\\\ /g'`/${TCL_BUILD_EXP_FILE} -L`pwd | sed -e 's/ /\\\\ /g'`"
-+            TCL_LIB_SPEC="-Wl,${libdir}/${TCL_EXP_FILE} -L${libdir}"
-         else
-             TCL_BUILD_LIB_SPEC="-bI:`pwd | sed -e 's/ /\\\\ /g'`/${TCL_BUILD_EXP_FILE}"
-             TCL_LIB_SPEC="-bI:${libdir}/${TCL_EXP_FILE}"
---- origsrc/tcl8.5.6/unix/tcl.m4	2008-12-22 08:16:08.000000000 -0600
-+++ src/tcl8.5.6/unix/tcl.m4	2009-02-26 11:38:29.141071600 -0600
-@@ -1276,6 +1276,19 @@ dnl AC_CHECK_TOOL(AR, ar)
+--- origsrc/tcl8.5.9/unix/tcl.m4	2010-09-08 12:40:48.000000000 -0500
++++ src/tcl8.5.9/unix/tcl.m4	2011-02-15 01:43:22.973429500 -0600
+@@ -1257,6 +1257,9 @@ dnl AC_CHECK_TOOL(AR, ar)
+ 	    DL_LIBS="-ldl"
  	    CC_SEARCH_FLAGS=""
  	    LD_SEARCH_FLAGS=""
- 	    ;;
-+	CYGWIN*)
-+	    SHLIB_CFLAGS=""
-+	    SHLIB_LD='${CC} -shared'
-+	    SHLIB_LD_LIBS='${LIBS}'
-+	    SHLIB_SUFFIX=".dll"
-+	    DL_OBJS="tclLoadDl.o"
-+	    DL_LIBS=""
-+	    CC_SEARCH_FLAGS=""
-+	    LD_SEARCH_FLAGS=""
 +	    TCL_NEEDS_EXP_FILE=1
 +	    TCL_EXPORT_FILE_SUFFIX='${VERSION}\$\{DBGX\}.dll.a'
-+	    TCL_SHLIB_LD_EXTRAS='-Wl,--out-implib,${TCL_BUILD_EXP_FILE}'
-+	    ;;
++	    TCL_SHLIB_LD_EXTRAS='-Wl,--out-implib,$@.a'
+ 	    ;;
  	dgux*)
  	    SHLIB_CFLAGS="-K PIC"
- 	    SHLIB_LD='${CC} -G'
-@@ -2060,6 +2074,7 @@ dnl # preprocessing tests use only CPPFL
- 	case $system in
- 	    AIX-*) ;;
- 	    BSD/OS*) ;;
-+	    CYGWIN*) ;;
- 	    IRIX*) ;;
- 	    NetBSD-*|FreeBSD-*) ;;
- 	    Darwin-*) ;;
