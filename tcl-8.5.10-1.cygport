@@ -4,7 +4,8 @@ DESCRIPTION="Tcl language interpreter"
 HOMEPAGE="http://tcl.tk/"
 SRC_URI="mirror://sourceforge/tcl/${PN}${PV}-src.tar.gz
          http://tcl.cvs.sourceforge.net/viewvc/tcl/tclconfig/tcl.m4"
-PATCH_URI="${slot}-cygwin.patch"
+PATCH_URI="8.5-cygwin.patch
+	   8.5.10-tea-m4.patch"
 
 SRC_DIR="${PN}${PV}"
 
@@ -12,8 +13,6 @@ DIFF_EXCLUDES='aclocal.m4 configure'
 
 src_compile() {
 	cd ${S}/unix
-	ACLOCAL_FLAGS="-I ."
-	WANT_AUTOMAKE=1.4
 	cygautoreconf
 
 	mkdir -p ${B}/unix
