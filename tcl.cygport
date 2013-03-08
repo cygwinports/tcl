@@ -1,0 +1,67 @@
+NAME="tcl"
+VERSION=8.5.11
+RELEASE=1
+CATEGORY="Interpreters"
+SUMMARY="Tool Command Language"
+DESCRIPTION="Tcl provides a powerful platform for creating integration
+applications that tie together diverse applications, protocols, devices,
+and frameworks. When paired with the Tk toolkit, Tcl provides the fastest
+and most powerful way to create GUI applications that run on PCs, Unix, and
+the Macintosh. Tcl can also be used for a variety of web-related tasks and
+for creating powerful command languages for applications."
+HOMEPAGE="http://tcl.tk/"
+SRC_URI="mirror://sourceforge/tcl/tcl${VERSION}-src.tar.gz
+         http://tcl.cvs.sourceforge.net/viewvc/tcl/tclconfig/tcl.m4"
+SRC_DIR="tcl${VERSION}"
+PATCH_URI="8.5-cygwin.patch
+	   8.5.10-tea-m4.patch"
+if cross_compiling
+then
+	PATCH_URI+=" 8.5-cross-install.patch"
+fi
+
+DIFF_EXCLUDES='aclocal.m4 configure'
+
+src_compile() {
+	cd ${S}/unix
+	cygautoreconf
+
+	mkdir -p ${B}/unix
+	cd ${B}/unix
+	cygconf --enable-man-symlinks tcl_cv_strtod_buggy=no tcl_cv_sys_version=CYGWIN_NT
+	cygmake -j1
+	cygmake libtcl${VERSION%.*}.a STUB_LIB_FILE=libtcl${VERSION%.*}.a STUB_LIB_OBJS=\${OBJS}
+}
+
+src_install() {
+	cd ${B}/unix
+	cyginstall
+
+	mv ${D}/usr/lib/libtcl${VERSION%.*}.dll ${D}/usr/bin/
+	dolib libtcl${VERSION%.*}.dll.a
+
+	sed -i \
+		-e "s|^\(TCL_BUILD_LIB_SPEC\)='.*|\1='-Wl,/usr/lib/libtcl${VERSION%.*}.dll.a'|" \
+		-e "s|^\(TCL_SRC_DIR\)='.*'|\1='/usr/include/tcl${VERSION%.*}'|" \
+		-e "s|^\(TCL_BUILD_STUB_LIB_SPEC\)='.*|\1='-Wl,/usr/lib/libtclstub${VERSION%.*}.a'|" \
+		-e "s|^\(TCL_BUILD_STUB_LIB_PATH\)='.*/unix|\1='/usr/lib|" \
+		-e "s|^\(TCL_STUB_LIB_SPEC\)='.*|\1='-Wl,-ltclstub${VERSION%.*}'|" \
+		${D}/usr/lib/tclConfig.sh || error
+
+	# install private headers
+	includeinto tcl${VERSION%.*}/unix
+	doinclude ${S}/unix/*.h
+	includeinto tcl${VERSION%.*}/generic
+	doinclude ${S}/generic/*.h
+
+	# install build system macros
+	insinto /usr/share/aclocal
+	newins ${S}/unix/tcl.m4 tcl-sc.m4
+	newins ${S}/tcl.m4 tcl-tea.m4
+
+	# make the default tcl version
+	dosym tclsh${VERSION%.*}.exe /usr/bin/tclsh
+	dosym ../tclConfig.sh /usr/lib/tcl${VERSION%.*}/tclConfig.sh
+	dosym libtcl${VERSION%.*}.dll.a /usr/lib/libtcl.dll.a
+	dosym libtclstub${VERSION%.*}.a /usr/lib/libtclstub.a
+}

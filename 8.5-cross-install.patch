@@ -1,0 +1,28 @@
+--- a/unix/Makefile.in	2010-09-08 12:40:48.000000000 -0500
++++ b/unix/Makefile.in	2011-03-18 02:40:22.707070428 -0500
+@@ -809,14 +809,14 @@
+ 	@echo "Installing time zone data"
+ 	@@LD_LIBRARY_PATH_VAR@="`pwd`:$${@LD_LIBRARY_PATH_VAR@}"; export @LD_LIBRARY_PATH_VAR@; \
+ 	TCL_LIBRARY="${TCL_BUILDTIME_LIBRARY}"; export TCL_LIBRARY; \
+-	./${TCL_EXE} $(TOOL_DIR)/installData.tcl \
++	tclsh $(TOOL_DIR)/installData.tcl \
+ 	    $(TOP_DIR)/library/tzdata "$(SCRIPT_INSTALL_DIR)"/tzdata
+ 
+ install-msgs: ${TCL_EXE}
+ 	@echo "Installing message catalogs"
+ 	@@LD_LIBRARY_PATH_VAR@="`pwd`:$${@LD_LIBRARY_PATH_VAR@}"; export @LD_LIBRARY_PATH_VAR@; \
+ 	TCL_LIBRARY="${TCL_BUILDTIME_LIBRARY}"; export TCL_LIBRARY; \
+-	./${TCL_EXE} $(TOOL_DIR)/installData.tcl \
++	tclsh $(TOOL_DIR)/installData.tcl \
+ 	    $(TOP_DIR)/library/msgs "$(SCRIPT_INSTALL_DIR)"/msgs
+ 
+ install-doc: doc
+@@ -1756,7 +1756,7 @@
+ BUILD_HTML = \
+ 	@@LD_LIBRARY_PATH_VAR@="`pwd`:$${@LD_LIBRARY_PATH_VAR@}"; export @LD_LIBRARY_PATH_VAR@; \
+ 	TCL_LIBRARY="${TCL_BUILDTIME_LIBRARY}"; export TCL_LIBRARY; \
+-	./${TCL_EXE} $(TOOL_DIR)/tcltk-man2html.tcl --htmldir="$(HTML_INSTALL_DIR)" \
++	tclsh $(TOOL_DIR)/tcltk-man2html.tcl --htmldir="$(HTML_INSTALL_DIR)" \
+ 		--srcdir=$(TOP_DIR)/.. $(BUILD_HTML_FLAGS)
+ 
+ #
