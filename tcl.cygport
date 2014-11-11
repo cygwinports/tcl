@@ -20,6 +20,8 @@ then
 	PATCH_URI+=" 8.5-cross-install.patch"
 fi
 
+REQUIRES="tzcode"
+
 DIFF_EXCLUDES='aclocal.m4 configure'
 
 src_compile() {
