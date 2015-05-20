@@ -1,5 +1,5 @@
 NAME="tcl"
-VERSION=8.5.11
+VERSION=8.5.18
 RELEASE=1
 CATEGORY="Interpreters"
 SUMMARY="Tool Command Language"
@@ -13,14 +13,39 @@ HOMEPAGE="http://tcl.tk/"
 SRC_URI="mirror://sourceforge/tcl/tcl${VERSION}-src.tar.gz
          http://tcl.cvs.sourceforge.net/viewvc/tcl/tclconfig/tcl.m4"
 SRC_DIR="tcl${VERSION}"
-PATCH_URI="8.5-cygwin.patch
-	   8.5.10-tea-m4.patch"
+PATCH_URI="
+	8.5.18-cygwin-unix.patch
+	8.5.10-tea-m4.patch
+"
 if cross_compiling
 then
 	PATCH_URI+=" 8.5-cross-install.patch"
 fi
 
-REQUIRES="tzcode"
+PKG_NAMES="tcl tcl-devel"
+tcl_REQUIRES="tzcode"
+tcl_CONTENTS="
+	usr/bin/libtcl${VERSION%.*}.dll
+	usr/bin/tclsh
+	usr/bin/tclsh${VERSION%.*}.exe
+	usr/lib/tcl${VERSION%%.*}/
+	usr/lib/tcl${VERSION%.*}/
+	usr/share/doc/
+	usr/share/man/man1/
+	usr/share/man/mann/
+"
+tcl_devel_CONTENTS="
+	usr/include/tcl${VERSION%.*}/
+	usr/include/tcl*.h
+	usr/lib/libtcl.dll.a
+	usr/lib/libtcl${VERSION%.*}.dll.a
+	usr/lib/libtclstub.a
+	usr/lib/libtclstub${VERSION%.*}.a
+	usr/lib/tclConfig.sh
+	usr/lib/pkgconfig/tcl.pc
+	usr/share/aclocal/*.m4
+	usr/share/man/man3/
+"
 
 DIFF_EXCLUDES='aclocal.m4 configure'
 
@@ -32,7 +57,7 @@ src_compile() {
 	cd ${B}/unix
 	cygconf --enable-man-symlinks tcl_cv_strtod_buggy=no tcl_cv_sys_version=CYGWIN_NT
 	cygmake -j1
-	cygmake libtcl${VERSION%.*}.a STUB_LIB_FILE=libtcl${VERSION%.*}.a STUB_LIB_OBJS=\${OBJS}
+#	cygmake libtcl${VERSION%.*}.a STUB_LIB_FILE=libtcl${VERSION%.*}.a STUB_LIB_OBJS=\${OBJS}
 }
 
 src_install() {
