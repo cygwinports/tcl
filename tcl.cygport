@@ -23,7 +23,7 @@ then
 fi
 
 PKG_NAMES="tcl tcl-devel"
-tcl_REQUIRES="tzcode"
+tcl_REQUIRES="tzdata"
 tcl_CONTENTS="
 	usr/bin/libtcl${VERSION%.*}.dll
 	usr/bin/tclsh
