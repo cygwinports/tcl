@@ -1,5 +1,5 @@
 NAME="tcl"
-VERSION=8.5.18
+VERSION=8.6.6
 RELEASE=1
 CATEGORY="Interpreters"
 SUMMARY="Tool Command Language"
@@ -10,11 +10,11 @@ and most powerful way to create GUI applications that run on PCs, Unix, and
 the Macintosh. Tcl can also be used for a variety of web-related tasks and
 for creating powerful command languages for applications."
 HOMEPAGE="http://tcl.tk/"
-SRC_URI="mirror://sourceforge/tcl/tcl${VERSION}-src.tar.gz
+SRC_URI="mirror://sourceforge/tcl/tcl-core${VERSION}-src.tar.gz
          http://tcl.cvs.sourceforge.net/viewvc/tcl/tclconfig/tcl.m4"
 SRC_DIR="tcl${VERSION}"
 PATCH_URI="
-	8.5.18-cygwin-unix.patch
+	8.6.6-cygwin-unix.patch
 	8.5.10-tea-m4.patch
 "
 if cross_compiling
@@ -41,7 +41,7 @@ tcl_devel_CONTENTS="
 	usr/lib/libtcl${VERSION%.*}.dll.a
 	usr/lib/libtclstub.a
 	usr/lib/libtclstub${VERSION%.*}.a
-	usr/lib/tclConfig.sh
+	usr/lib/tcl*Config.sh
 	usr/lib/pkgconfig/tcl.pc
 	usr/share/aclocal/*.m4
 	usr/share/man/man3/
