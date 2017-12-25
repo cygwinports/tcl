@@ -17,7 +17,7 @@
  {
 -#ifdef __CYGWIN__
 +#if 0
- #define geteuid() (short)(geteuid)() 
+ #define geteuid() (short)(geteuid)()
  #endif
  #if !defined(_WIN32)
 --- origsrc/tcl8.6.6/generic/tclDecls.h	2016-07-26 09:07:04.000000000 -0500
